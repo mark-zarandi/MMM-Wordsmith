@@ -1,0 +1,53 @@
+# macOS junk
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon files
+
+Icon?
+._*
+
+# Thumbnails
+
+.Spotlight-V100
+.Trashes
+
+# Node
+
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+
+.env
+.env.*
+
+# Logs
+
+logs/
+*.log
+
+# Build / dist
+
+dist/
+build/
+
+# Editor / IDE
+
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated
+
+Thumbs.db
+
+# Optional: MagicMirror config (if you don’t want personal config tracked)
+
+config/config.js

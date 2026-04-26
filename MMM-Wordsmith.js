@@ -23,7 +23,7 @@ Module.register("MMM-Wordsmith", {
 			// "....-01-01": ["Happy new year!"]
 		},
 		updateInterval: 30000,
-		remoteFile: 'wordsv2.json',
+		remoteFile: 'wordsv3.json',
 		remoteFileRefreshInterval: 0,
 		fadeSpeed: 4000,
 		morningStartTime: 3,
@@ -272,7 +272,9 @@ Module.register("MMM-Wordsmith", {
 
 	// Override dom generator.
 	getDom () {
+
 		const wrapper = document.createElement("div");
+
 		//wrapper.className = this.config.classes ? this.config.classes : "bold xlarge bright pre-line";
 		// get the compliment text
 		const complimentText = this.getRandomCompliment();
@@ -283,7 +285,7 @@ Module.register("MMM-Wordsmith", {
 		const parts = complimentWord.split("\n");
 		// create a span to hold the compliment
 		const compliment = document.createElement("span");
-		compliment.className = this.config.classes ? this.config.classes : "bold xlarge bright pre-line";
+		compliment.className = this.config.classes ? this.config.classes : "MMM-WS-word bold xlarge bright pre-line";
 		// process all the parts of the compliment text
 		for (const part of parts) {
 			if (part !== "") {
@@ -303,13 +305,15 @@ Module.register("MMM-Wordsmith", {
 		}
 
 
-		const complimentMeaning = '\n' + complimentText['meaning'][0]
+		const complimentMeaning = '\n' + complimentText['meaning']
 		Log.info(complimentMeaning)
 		const more_parts = complimentMeaning.split("\n");
 		Log.info(more_parts)
 		// create a span to hold the compliment
-		const the_meaning = document.createElement("span");
-		the_meaning.className = this.config.classes ? this.config.classes : "thin xlarge bright pre-line";
+		const the_meaning = document.createElement("div");
+		the_meaning.style.setProperty("text-align","left","important");
+		the_meaning.style.setProperty("padding-left","2vw","important");
+		the_meaning.className = this.config.classes ? this.config.classes : "MMM-WS-meaning thin xlarge bright pre-line";
 		// process all the parts of the compliment text
 		for (const part of more_parts) {
 			if (part !== "") {
